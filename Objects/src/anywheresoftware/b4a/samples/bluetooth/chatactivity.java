@@ -324,6 +324,8 @@ public anywheresoftware.b4a.objects.EditTextWrapper _txtlog = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnsend = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _setup = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _id = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _sw1 = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _sw2 = null;
 public anywheresoftware.b4a.samples.bluetooth.main _main = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="chatactivity";
@@ -411,16 +413,16 @@ public static String  _logmessage(String _from,String _msg) throws Exception{
 RDebugUtils.currentModule="chatactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "logmessage"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "logmessage", new Object[] {_from,_msg});
-RDebugUtils.currentLine=1376256;
- //BA.debugLineNum = 1376256;BA.debugLine="Sub LogMessage(From As String, Msg As String)";
-RDebugUtils.currentLine=1376257;
- //BA.debugLineNum = 1376257;BA.debugLine="txtLog.Text = txtLog.Text & From & \": \" & Msg & C";
+RDebugUtils.currentLine=1441792;
+ //BA.debugLineNum = 1441792;BA.debugLine="Sub LogMessage(From As String, Msg As String)";
+RDebugUtils.currentLine=1441793;
+ //BA.debugLineNum = 1441793;BA.debugLine="txtLog.Text = txtLog.Text & From & \": \" & Msg & C";
 mostCurrent._txtlog.setText((Object)(mostCurrent._txtlog.getText()+_from+": "+_msg+anywheresoftware.b4a.keywords.Common.CRLF));
-RDebugUtils.currentLine=1376258;
- //BA.debugLineNum = 1376258;BA.debugLine="txtLog.SelectionStart = txtLog.Text.Length";
+RDebugUtils.currentLine=1441794;
+ //BA.debugLineNum = 1441794;BA.debugLine="txtLog.SelectionStart = txtLog.Text.Length";
 mostCurrent._txtlog.setSelectionStart(mostCurrent._txtlog.getText().length());
-RDebugUtils.currentLine=1376259;
- //BA.debugLineNum = 1376259;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1441795;
+ //BA.debugLineNum = 1441795;BA.debugLine="End Sub";
 return "";
 }
 public static String  _astream_terminated() throws Exception{
@@ -440,47 +442,79 @@ public static String  _btnsend_click() throws Exception{
 RDebugUtils.currentModule="chatactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnsend_click"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "btnsend_click", null);
-RDebugUtils.currentLine=1310720;
- //BA.debugLineNum = 1310720;BA.debugLine="Sub btnSend_Click";
-RDebugUtils.currentLine=1310721;
- //BA.debugLineNum = 1310721;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
+RDebugUtils.currentLine=1376256;
+ //BA.debugLineNum = 1376256;BA.debugLine="Sub btnSend_Click";
+RDebugUtils.currentLine=1376257;
+ //BA.debugLineNum = 1376257;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
 _astream.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
-RDebugUtils.currentLine=1310722;
- //BA.debugLineNum = 1310722;BA.debugLine="txtInput.SelectAll";
+RDebugUtils.currentLine=1376258;
+ //BA.debugLineNum = 1376258;BA.debugLine="txtInput.SelectAll";
 mostCurrent._txtinput.SelectAll();
-RDebugUtils.currentLine=1310723;
- //BA.debugLineNum = 1310723;BA.debugLine="txtInput.RequestFocus";
+RDebugUtils.currentLine=1376259;
+ //BA.debugLineNum = 1376259;BA.debugLine="txtInput.RequestFocus";
 mostCurrent._txtinput.RequestFocus();
-RDebugUtils.currentLine=1310724;
- //BA.debugLineNum = 1310724;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
+RDebugUtils.currentLine=1376260;
+ //BA.debugLineNum = 1376260;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
 _logmessage("Me",mostCurrent._txtinput.getText());
-RDebugUtils.currentLine=1310725;
- //BA.debugLineNum = 1310725;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1376261;
+ //BA.debugLineNum = 1376261;BA.debugLine="End Sub";
 return "";
 }
 public static String  _setup_click() throws Exception{
 RDebugUtils.currentModule="chatactivity";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "setup_click"))
 	return (String) Debug.delegate(mostCurrent.activityBA, "setup_click", null);
+RDebugUtils.currentLine=1310720;
+ //BA.debugLineNum = 1310720;BA.debugLine="Sub Setup_click";
+RDebugUtils.currentLine=1310721;
+ //BA.debugLineNum = 1310721;BA.debugLine="txtInput.Text=\"0\" & id.text";
+mostCurrent._txtinput.setText((Object)("0"+mostCurrent._id.getText()));
+RDebugUtils.currentLine=1310722;
+ //BA.debugLineNum = 1310722;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
+_astream.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
+RDebugUtils.currentLine=1310723;
+ //BA.debugLineNum = 1310723;BA.debugLine="txtInput.SelectAll";
+mostCurrent._txtinput.SelectAll();
+RDebugUtils.currentLine=1310724;
+ //BA.debugLineNum = 1310724;BA.debugLine="txtInput.RequestFocus";
+mostCurrent._txtinput.RequestFocus();
+RDebugUtils.currentLine=1310725;
+ //BA.debugLineNum = 1310725;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
+_logmessage("Me",mostCurrent._txtinput.getText());
+RDebugUtils.currentLine=1310726;
+ //BA.debugLineNum = 1310726;BA.debugLine="End Sub";
+return "";
+}
+public static String  _sw1_click() throws Exception{
+RDebugUtils.currentModule="chatactivity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "sw1_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "sw1_click", null);
+RDebugUtils.currentLine=2162688;
+ //BA.debugLineNum = 2162688;BA.debugLine="Sub SW1_click";
+RDebugUtils.currentLine=2162689;
+ //BA.debugLineNum = 2162689;BA.debugLine="txtInput.Text=\"1000\"";
+mostCurrent._txtinput.setText((Object)("1000"));
+RDebugUtils.currentLine=2162690;
+ //BA.debugLineNum = 2162690;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
+_astream.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
+RDebugUtils.currentLine=2162691;
+ //BA.debugLineNum = 2162691;BA.debugLine="End Sub";
+return "";
+}
+public static String  _sw2_click() throws Exception{
+RDebugUtils.currentModule="chatactivity";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "sw2_click"))
+	return (String) Debug.delegate(mostCurrent.activityBA, "sw2_click", null);
 RDebugUtils.currentLine=2228224;
- //BA.debugLineNum = 2228224;BA.debugLine="Sub Setup_click";
+ //BA.debugLineNum = 2228224;BA.debugLine="Sub SW2_click";
 RDebugUtils.currentLine=2228225;
- //BA.debugLineNum = 2228225;BA.debugLine="txtInput.Text=\"setup id:\" & id.text";
-mostCurrent._txtinput.setText((Object)("setup id:"+mostCurrent._id.getText()));
+ //BA.debugLineNum = 2228225;BA.debugLine="txtInput.Text=\"2000\"";
+mostCurrent._txtinput.setText((Object)("2000"));
 RDebugUtils.currentLine=2228226;
  //BA.debugLineNum = 2228226;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
 _astream.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
 RDebugUtils.currentLine=2228227;
- //BA.debugLineNum = 2228227;BA.debugLine="txtInput.SelectAll";
-mostCurrent._txtinput.SelectAll();
-RDebugUtils.currentLine=2228228;
- //BA.debugLineNum = 2228228;BA.debugLine="txtInput.RequestFocus";
-mostCurrent._txtinput.RequestFocus();
-RDebugUtils.currentLine=2228229;
- //BA.debugLineNum = 2228229;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
-_logmessage("Me",mostCurrent._txtinput.getText());
-RDebugUtils.currentLine=2228230;
- //BA.debugLineNum = 2228230;BA.debugLine="End Sub";
+ //BA.debugLineNum = 2228227;BA.debugLine="End Sub";
 return "";
 }
 public static String  _txtinput_enterpressed() throws Exception{

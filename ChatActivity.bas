@@ -19,6 +19,9 @@ Sub Globals
 	Dim btnSend As Button
 	Dim Setup As Button
 	Dim id As EditText
+	Dim SW1 As Button
+	Dim SW2 As Button
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -57,8 +60,18 @@ Sub txtInput_EnterPressed
 	If btnSend.Enabled = True Then btnSend_Click
 End Sub
 
+Sub SW1_click
+	txtInput.Text="1000" 
+	AStream.Write(txtInput.Text.GetBytes("UTF8"))
+End Sub
+
+Sub SW2_click
+	txtInput.Text="2000" 
+	AStream.Write(txtInput.Text.GetBytes("UTF8"))
+End Sub
+
 Sub Setup_click
-	txtInput.Text="setup id:" & id.text
+	txtInput.Text="0" & id.text
 	AStream.Write(txtInput.Text.GetBytes("UTF8"))
 	txtInput.SelectAll
 	txtInput.RequestFocus
