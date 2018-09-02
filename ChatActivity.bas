@@ -21,7 +21,9 @@ Sub Globals
 	Dim id As EditText
 	Dim SW1 As Button
 	Dim SW2 As Button
-	
+	Dim Label2 As Label
+	Dim Label3 As Label
+		
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -34,6 +36,14 @@ End Sub
 
 Sub AStream_NewData (Buffer() As Byte)
 	LogMessage("You", BytesToString(Buffer, 0, Buffer.Length, "UTF8"))
+    If Buffer(0)=50 Then ' "2"
+		Label2.text= BytesToString(Buffer, 0, Buffer.Length, "UTF8")
+				
+	else if Buffer(0)=51 Then ' "3"
+		Label3.text= BytesToString(Buffer, 0, Buffer.Length, "UTF8")	
+	Else
+		txtInput.Text= Buffer(0)
+    End If
 End Sub
 
 Sub AStream_Error

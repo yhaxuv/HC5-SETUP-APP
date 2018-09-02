@@ -63,8 +63,10 @@ public static RemoteObject _setup = RemoteObject.declareNull("anywheresoftware.b
 public static RemoteObject _id = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
 public static RemoteObject _sw1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 public static RemoteObject _sw2 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
+public static RemoteObject _label2 = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
+public static RemoteObject _label3 = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 public static anywheresoftware.b4a.samples.bluetooth.main _main = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",chatactivity.mostCurrent._activity,"AStream",chatactivity._astream,"btnSend",chatactivity.mostCurrent._btnsend,"id",chatactivity.mostCurrent._id,"Main",Debug.moduleToString(anywheresoftware.b4a.samples.bluetooth.main.class),"Setup",chatactivity.mostCurrent._setup,"SW1",chatactivity.mostCurrent._sw1,"SW2",chatactivity.mostCurrent._sw2,"txtInput",chatactivity.mostCurrent._txtinput,"txtLog",chatactivity.mostCurrent._txtlog};
+		return new Object[] {"Activity",chatactivity.mostCurrent._activity,"AStream",chatactivity._astream,"btnSend",chatactivity.mostCurrent._btnsend,"id",chatactivity.mostCurrent._id,"Label2",chatactivity.mostCurrent._label2,"Label3",chatactivity.mostCurrent._label3,"Main",Debug.moduleToString(anywheresoftware.b4a.samples.bluetooth.main.class),"Setup",chatactivity.mostCurrent._setup,"SW1",chatactivity.mostCurrent._sw1,"SW2",chatactivity.mostCurrent._sw2,"txtInput",chatactivity.mostCurrent._txtinput,"txtLog",chatactivity.mostCurrent._txtlog};
 }
 }

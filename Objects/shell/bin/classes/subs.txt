@@ -45,39 +45,39 @@ main,serial1_connected,0,0,109,118
 
 
 
-chatactivity,activity_create,1,0,22,28
-,btnsend,,id,,setup,,sw1,,sw2,,txtinput,,txtlog,,astream,main,serial1
-,btnsend,,id,,setup,,sw1,,sw2,,txtinput,,txtlog
+chatactivity,activity_create,1,0,24,30
+,btnsend,,id,,label2,,label3,,setup,,sw1,,sw2,,txtinput,,txtlog,,astream,main,serial1
+,btnsend,,id,,label2,,label3,,setup,,sw1,,sw2,,txtinput,,txtlog
 
-chatactivity,activity_pause,0,0,48,52
+chatactivity,activity_pause,0,0,58,62
 ,astream
 
 
-chatactivity,activity_resume,0,0,44,46
+chatactivity,activity_resume,0,0,54,56
 
 
 
-chatactivity,astream_error,0,0,34,38
+chatactivity,astream_error,0,0,44,48
 ,btnsend,,txtinput
 
 
-chatactivity,astream_newdata,1,0,30,32
-,txtlog
+chatactivity,astream_newdata,1,1,32,42
+,label2,,label3,,txtinput,,txtlog
 
 ,logmessage
-chatactivity,logmessage,1,0,83,86
+chatactivity,logmessage,1,0,93,96
 ,txtlog
 
 
-chatactivity,astream_terminated,0,0,40,42
+chatactivity,astream_terminated,0,0,50,52
 ,btnsend,,txtinput
 
 ,astream_error
-chatactivity,btnsend_click,1,0,76,81
+chatactivity,btnsend_click,1,0,86,91
 ,astream,,txtinput,,txtlog
 
 ,logmessage
-chatactivity,globals,0,1,11,20
+chatactivity,globals,0,1,11,22
 
 
 
@@ -85,19 +85,19 @@ chatactivity,process_globals,0,1,7,9
 
 
 
-chatactivity,setup_click,1,0,68,74
+chatactivity,setup_click,1,0,78,84
 ,txtinput,,id,,astream,,txtlog
 
 ,logmessage
-chatactivity,sw1_click,1,0,58,61
+chatactivity,sw1_click,1,0,68,71
 ,txtinput,,astream
 
 
-chatactivity,sw2_click,1,0,63,66
+chatactivity,sw2_click,1,0,73,76
 ,txtinput,,astream
 
 
-chatactivity,txtinput_enterpressed,1,0,54,56
+chatactivity,txtinput_enterpressed,1,0,64,66
 ,btnsend,,astream,,txtinput,,txtlog
 
 ,btnsend_click,,logmessage

@@ -326,6 +326,8 @@ public anywheresoftware.b4a.objects.ButtonWrapper _setup = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _id = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _sw1 = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _sw2 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _label2 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _label3 = null;
 public anywheresoftware.b4a.samples.bluetooth.main _main = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="chatactivity";
@@ -406,7 +408,21 @@ RDebugUtils.currentLine=917505;
  //BA.debugLineNum = 917505;BA.debugLine="LogMessage(\"You\", BytesToString(Buffer, 0, Buffer";
 _logmessage("You",anywheresoftware.b4a.keywords.Common.BytesToString(_buffer,(int) (0),_buffer.length,"UTF8"));
 RDebugUtils.currentLine=917506;
- //BA.debugLineNum = 917506;BA.debugLine="End Sub";
+ //BA.debugLineNum = 917506;BA.debugLine="If Buffer(5)=\"2\" Then";
+if (_buffer[(int) (5)]==(double)(Double.parseDouble("2"))) { 
+RDebugUtils.currentLine=917507;
+ //BA.debugLineNum = 917507;BA.debugLine="Label2.text= \"OK\"";
+mostCurrent._label2.setText((Object)("OK"));
+ }else 
+{RDebugUtils.currentLine=917509;
+ //BA.debugLineNum = 917509;BA.debugLine="else if Buffer(5)=\"3\" Then";
+if (_buffer[(int) (5)]==(double)(Double.parseDouble("3"))) { 
+RDebugUtils.currentLine=917510;
+ //BA.debugLineNum = 917510;BA.debugLine="Label3.text= \"OK\"";
+mostCurrent._label3.setText((Object)("OK"));
+ }};
+RDebugUtils.currentLine=917513;
+ //BA.debugLineNum = 917513;BA.debugLine="End Sub";
 return "";
 }
 public static String  _logmessage(String _from,String _msg) throws Exception{
