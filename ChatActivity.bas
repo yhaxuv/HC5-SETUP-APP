@@ -36,10 +36,12 @@ End Sub
 
 Sub AStream_NewData (Buffer() As Byte)
 	LogMessage("You", BytesToString(Buffer, 0, Buffer.Length, "UTF8"))
-    If Buffer(0)=50 Then ' "2"
+    If Buffer(0)=51 Then ' "3"
+		Buffer(0)=32
 		Label2.text= BytesToString(Buffer, 0, Buffer.Length, "UTF8")
 				
-	else if Buffer(0)=51 Then ' "3"
+	else if Buffer(0)=52 Then ' "4"
+		Buffer(0)=32		
 		Label3.text= BytesToString(Buffer, 0, Buffer.Length, "UTF8")	
 	Else
 		txtInput.Text= Buffer(0)
@@ -73,11 +75,13 @@ End Sub
 Sub SW1_click
 	txtInput.Text="1000" 
 	AStream.Write(txtInput.Text.GetBytes("UTF8"))
+	LogMessage("Me", txtInput.Text)	
 End Sub
 
 Sub SW2_click
 	txtInput.Text="2000" 
 	AStream.Write(txtInput.Text.GetBytes("UTF8"))
+	LogMessage("Me", txtInput.Text)		
 End Sub
 
 Sub Setup_click

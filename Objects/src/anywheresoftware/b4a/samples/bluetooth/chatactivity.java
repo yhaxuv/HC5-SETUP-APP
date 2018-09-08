@@ -32,7 +32,7 @@ public class chatactivity extends Activity implements B4AActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (isFirst) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "anywheresoftware.b4a.samples.bluetooth", "anywheresoftware.b4a.samples.bluetooth.chatactivity");
+			processBA = new BA(this.getApplicationContext(), null, null, "anywheresoftware.b4a.samples.bluetooth", "anywheresoftware.b4a.samples.bluetooth.chatactivity");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -308,17 +308,8 @@ public class chatactivity extends Activity implements B4AActivity{
 		processBA.raiseEvent2(null, true, "globals", false, (Object[])null);
 	}
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
-public static anywheresoftware.b4a.randomaccessfile.AsyncStreams _astream = null;
+public static anywheresoftware.b4a.randomaccessfile.AsyncStreams _v5 = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _txtinput = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _txtlog = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnsend = null;
@@ -328,223 +319,179 @@ public anywheresoftware.b4a.objects.ButtonWrapper _sw1 = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _sw2 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _label2 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _label3 = null;
-public anywheresoftware.b4a.samples.bluetooth.main _main = null;
+public anywheresoftware.b4a.samples.bluetooth.main _vv3 = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime});
-RDebugUtils.currentLine=851968;
- //BA.debugLineNum = 851968;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=851969;
- //BA.debugLineNum = 851969;BA.debugLine="Activity.LoadLayout(\"2\")";
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 25;BA.debugLine="Activity.LoadLayout(\"2\")";
 mostCurrent._activity.LoadLayout("2",mostCurrent.activityBA);
-RDebugUtils.currentLine=851970;
- //BA.debugLineNum = 851970;BA.debugLine="If AStream.IsInitialized = False Then";
-if (_astream.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
-RDebugUtils.currentLine=851971;
- //BA.debugLineNum = 851971;BA.debugLine="AStream.InitializePrefix(Main.serial1.InputStrea";
-_astream.InitializePrefix(processBA,mostCurrent._main._serial1.getInputStream(),anywheresoftware.b4a.keywords.Common.True,mostCurrent._main._serial1.getOutputStream(),"AStream");
+ //BA.debugLineNum = 26;BA.debugLine="If AStream.IsInitialized = False Then";
+if (_v5.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 27;BA.debugLine="AStream.InitializePrefix(Main.serial1.InputStrea";
+_v5.InitializePrefix(processBA,mostCurrent._vv3._v7.getInputStream(),anywheresoftware.b4a.keywords.Common.True,mostCurrent._vv3._v7.getOutputStream(),"AStream");
  };
-RDebugUtils.currentLine=851973;
- //BA.debugLineNum = 851973;BA.debugLine="txtLog.Width = 100%x";
+ //BA.debugLineNum = 29;BA.debugLine="txtLog.Width = 100%x";
 mostCurrent._txtlog.setWidth(anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA));
-RDebugUtils.currentLine=851974;
- //BA.debugLineNum = 851974;BA.debugLine="End Sub";
+ //BA.debugLineNum = 30;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_pause"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "activity_pause", new Object[] {_userclosed});
-RDebugUtils.currentLine=1179648;
- //BA.debugLineNum = 1179648;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=1179649;
- //BA.debugLineNum = 1179649;BA.debugLine="If UserClosed Then";
+ //BA.debugLineNum = 60;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 61;BA.debugLine="If UserClosed Then";
 if (_userclosed) { 
-RDebugUtils.currentLine=1179650;
- //BA.debugLineNum = 1179650;BA.debugLine="AStream.Close";
-_astream.Close();
+ //BA.debugLineNum = 62;BA.debugLine="AStream.Close";
+_v5.Close();
  };
-RDebugUtils.currentLine=1179652;
- //BA.debugLineNum = 1179652;BA.debugLine="End Sub";
+ //BA.debugLineNum = 64;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null);
-RDebugUtils.currentLine=1114112;
- //BA.debugLineNum = 1114112;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=1114114;
- //BA.debugLineNum = 1114114;BA.debugLine="End Sub";
+ //BA.debugLineNum = 56;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 58;BA.debugLine="End Sub";
 return "";
 }
 public static String  _astream_error() throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "astream_error"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "astream_error", null);
-RDebugUtils.currentLine=983040;
- //BA.debugLineNum = 983040;BA.debugLine="Sub AStream_Error";
-RDebugUtils.currentLine=983041;
- //BA.debugLineNum = 983041;BA.debugLine="ToastMessageShow(\"Connection is broken.\", True)";
+ //BA.debugLineNum = 46;BA.debugLine="Sub AStream_Error";
+ //BA.debugLineNum = 47;BA.debugLine="ToastMessageShow(\"Connection is broken.\", True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow("Connection is broken.",anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=983042;
- //BA.debugLineNum = 983042;BA.debugLine="btnSend.Enabled = False";
+ //BA.debugLineNum = 48;BA.debugLine="btnSend.Enabled = False";
 mostCurrent._btnsend.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=983043;
- //BA.debugLineNum = 983043;BA.debugLine="txtInput.Enabled = False";
+ //BA.debugLineNum = 49;BA.debugLine="txtInput.Enabled = False";
 mostCurrent._txtinput.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=983044;
- //BA.debugLineNum = 983044;BA.debugLine="End Sub";
+ //BA.debugLineNum = 50;BA.debugLine="End Sub";
 return "";
 }
 public static String  _astream_newdata(byte[] _buffer) throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "astream_newdata"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "astream_newdata", new Object[] {_buffer});
-RDebugUtils.currentLine=917504;
- //BA.debugLineNum = 917504;BA.debugLine="Sub AStream_NewData (Buffer() As Byte)";
-RDebugUtils.currentLine=917505;
- //BA.debugLineNum = 917505;BA.debugLine="LogMessage(\"You\", BytesToString(Buffer, 0, Buffer";
-_logmessage("You",anywheresoftware.b4a.keywords.Common.BytesToString(_buffer,(int) (0),_buffer.length,"UTF8"));
-RDebugUtils.currentLine=917506;
- //BA.debugLineNum = 917506;BA.debugLine="If Buffer(5)=\"2\" Then";
-if (_buffer[(int) (5)]==(double)(Double.parseDouble("2"))) { 
-RDebugUtils.currentLine=917507;
- //BA.debugLineNum = 917507;BA.debugLine="Label2.text= \"OK\"";
-mostCurrent._label2.setText((Object)("OK"));
- }else 
-{RDebugUtils.currentLine=917509;
- //BA.debugLineNum = 917509;BA.debugLine="else if Buffer(5)=\"3\" Then";
-if (_buffer[(int) (5)]==(double)(Double.parseDouble("3"))) { 
-RDebugUtils.currentLine=917510;
- //BA.debugLineNum = 917510;BA.debugLine="Label3.text= \"OK\"";
-mostCurrent._label3.setText((Object)("OK"));
- }};
-RDebugUtils.currentLine=917513;
- //BA.debugLineNum = 917513;BA.debugLine="End Sub";
-return "";
-}
-public static String  _logmessage(String _from,String _msg) throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "logmessage"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "logmessage", new Object[] {_from,_msg});
-RDebugUtils.currentLine=1572864;
- //BA.debugLineNum = 1572864;BA.debugLine="Sub LogMessage(From As String, Msg As String)";
-RDebugUtils.currentLine=1572865;
- //BA.debugLineNum = 1572865;BA.debugLine="txtLog.Text = txtLog.Text & From & \": \" & Msg & C";
-mostCurrent._txtlog.setText((Object)(mostCurrent._txtlog.getText()+_from+": "+_msg+anywheresoftware.b4a.keywords.Common.CRLF));
-RDebugUtils.currentLine=1572866;
- //BA.debugLineNum = 1572866;BA.debugLine="txtLog.SelectionStart = txtLog.Text.Length";
-mostCurrent._txtlog.setSelectionStart(mostCurrent._txtlog.getText().length());
-RDebugUtils.currentLine=1572867;
- //BA.debugLineNum = 1572867;BA.debugLine="End Sub";
+ //BA.debugLineNum = 32;BA.debugLine="Sub AStream_NewData (Buffer() As Byte)";
+ //BA.debugLineNum = 33;BA.debugLine="LogMessage(\"You\", BytesToString(Buffer, 0, Buffer";
+_vv4("You",anywheresoftware.b4a.keywords.Common.BytesToString(_buffer,(int) (0),_buffer.length,"UTF8"));
+ //BA.debugLineNum = 34;BA.debugLine="If Buffer(0)=51 Then ' \"3\"";
+if (_buffer[(int) (0)]==51) { 
+ //BA.debugLineNum = 35;BA.debugLine="Buffer(0)=32";
+_buffer[(int) (0)] = (byte) (32);
+ //BA.debugLineNum = 36;BA.debugLine="Label2.text= BytesToString(Buffer, 0, Buffer.Len";
+mostCurrent._label2.setText((Object)(anywheresoftware.b4a.keywords.Common.BytesToString(_buffer,(int) (0),_buffer.length,"UTF8")));
+ }else if(_buffer[(int) (0)]==52) { 
+ //BA.debugLineNum = 39;BA.debugLine="Buffer(0)=32";
+_buffer[(int) (0)] = (byte) (32);
+ //BA.debugLineNum = 40;BA.debugLine="Label3.text= BytesToString(Buffer, 0, Buffer.Len";
+mostCurrent._label3.setText((Object)(anywheresoftware.b4a.keywords.Common.BytesToString(_buffer,(int) (0),_buffer.length,"UTF8")));
+ }else {
+ //BA.debugLineNum = 42;BA.debugLine="txtInput.Text= Buffer(0)";
+mostCurrent._txtinput.setText((Object)(_buffer[(int) (0)]));
+ };
+ //BA.debugLineNum = 44;BA.debugLine="End Sub";
 return "";
 }
 public static String  _astream_terminated() throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "astream_terminated"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "astream_terminated", null);
-RDebugUtils.currentLine=1048576;
- //BA.debugLineNum = 1048576;BA.debugLine="Sub AStream_Terminated";
-RDebugUtils.currentLine=1048577;
- //BA.debugLineNum = 1048577;BA.debugLine="AStream_Error";
+ //BA.debugLineNum = 52;BA.debugLine="Sub AStream_Terminated";
+ //BA.debugLineNum = 53;BA.debugLine="AStream_Error";
 _astream_error();
-RDebugUtils.currentLine=1048578;
- //BA.debugLineNum = 1048578;BA.debugLine="End Sub";
+ //BA.debugLineNum = 54;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnsend_click() throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "btnsend_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "btnsend_click", null);
-RDebugUtils.currentLine=1507328;
- //BA.debugLineNum = 1507328;BA.debugLine="Sub btnSend_Click";
-RDebugUtils.currentLine=1507329;
- //BA.debugLineNum = 1507329;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
-_astream.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
-RDebugUtils.currentLine=1507330;
- //BA.debugLineNum = 1507330;BA.debugLine="txtInput.SelectAll";
+ //BA.debugLineNum = 90;BA.debugLine="Sub btnSend_Click";
+ //BA.debugLineNum = 91;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
+_v5.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
+ //BA.debugLineNum = 92;BA.debugLine="txtInput.SelectAll";
 mostCurrent._txtinput.SelectAll();
-RDebugUtils.currentLine=1507331;
- //BA.debugLineNum = 1507331;BA.debugLine="txtInput.RequestFocus";
+ //BA.debugLineNum = 93;BA.debugLine="txtInput.RequestFocus";
 mostCurrent._txtinput.RequestFocus();
-RDebugUtils.currentLine=1507332;
- //BA.debugLineNum = 1507332;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
-_logmessage("Me",mostCurrent._txtinput.getText());
-RDebugUtils.currentLine=1507333;
- //BA.debugLineNum = 1507333;BA.debugLine="End Sub";
+ //BA.debugLineNum = 94;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
+_vv4("Me",mostCurrent._txtinput.getText());
+ //BA.debugLineNum = 95;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 11;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 12;BA.debugLine="Dim txtInput As EditText";
+mostCurrent._txtinput = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 13;BA.debugLine="Dim txtLog As EditText";
+mostCurrent._txtlog = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 14;BA.debugLine="Dim btnSend As Button";
+mostCurrent._btnsend = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 15;BA.debugLine="Dim Setup As Button";
+mostCurrent._setup = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 16;BA.debugLine="Dim id As EditText";
+mostCurrent._id = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Dim SW1 As Button";
+mostCurrent._sw1 = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Dim SW2 As Button";
+mostCurrent._sw2 = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 19;BA.debugLine="Dim Label2 As Label";
+mostCurrent._label2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 20;BA.debugLine="Dim Label3 As Label";
+mostCurrent._label3 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
+return "";
+}
+public static String  _vv4(String _from,String _msg) throws Exception{
+ //BA.debugLineNum = 97;BA.debugLine="Sub LogMessage(From As String, Msg As String)";
+ //BA.debugLineNum = 98;BA.debugLine="txtLog.Text = txtLog.Text & From & \": \" & Msg & C";
+mostCurrent._txtlog.setText((Object)(mostCurrent._txtlog.getText()+_from+": "+_msg+anywheresoftware.b4a.keywords.Common.CRLF));
+ //BA.debugLineNum = 99;BA.debugLine="txtLog.SelectionStart = txtLog.Text.Length";
+mostCurrent._txtlog.setSelectionStart(mostCurrent._txtlog.getText().length());
+ //BA.debugLineNum = 100;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 7;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 8;BA.debugLine="Dim AStream As AsyncStreams";
+_v5 = new anywheresoftware.b4a.randomaccessfile.AsyncStreams();
+ //BA.debugLineNum = 9;BA.debugLine="End Sub";
 return "";
 }
 public static String  _setup_click() throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "setup_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "setup_click", null);
-RDebugUtils.currentLine=1441792;
- //BA.debugLineNum = 1441792;BA.debugLine="Sub Setup_click";
-RDebugUtils.currentLine=1441793;
- //BA.debugLineNum = 1441793;BA.debugLine="txtInput.Text=\"0\" & id.text";
+ //BA.debugLineNum = 82;BA.debugLine="Sub Setup_click";
+ //BA.debugLineNum = 83;BA.debugLine="txtInput.Text=\"0\" & id.text";
 mostCurrent._txtinput.setText((Object)("0"+mostCurrent._id.getText()));
-RDebugUtils.currentLine=1441794;
- //BA.debugLineNum = 1441794;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
-_astream.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
-RDebugUtils.currentLine=1441795;
- //BA.debugLineNum = 1441795;BA.debugLine="txtInput.SelectAll";
+ //BA.debugLineNum = 84;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
+_v5.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
+ //BA.debugLineNum = 85;BA.debugLine="txtInput.SelectAll";
 mostCurrent._txtinput.SelectAll();
-RDebugUtils.currentLine=1441796;
- //BA.debugLineNum = 1441796;BA.debugLine="txtInput.RequestFocus";
+ //BA.debugLineNum = 86;BA.debugLine="txtInput.RequestFocus";
 mostCurrent._txtinput.RequestFocus();
-RDebugUtils.currentLine=1441797;
- //BA.debugLineNum = 1441797;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
-_logmessage("Me",mostCurrent._txtinput.getText());
-RDebugUtils.currentLine=1441798;
- //BA.debugLineNum = 1441798;BA.debugLine="End Sub";
+ //BA.debugLineNum = 87;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
+_vv4("Me",mostCurrent._txtinput.getText());
+ //BA.debugLineNum = 88;BA.debugLine="End Sub";
 return "";
 }
 public static String  _sw1_click() throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "sw1_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "sw1_click", null);
-RDebugUtils.currentLine=1310720;
- //BA.debugLineNum = 1310720;BA.debugLine="Sub SW1_click";
-RDebugUtils.currentLine=1310721;
- //BA.debugLineNum = 1310721;BA.debugLine="txtInput.Text=\"1000\"";
+ //BA.debugLineNum = 70;BA.debugLine="Sub SW1_click";
+ //BA.debugLineNum = 71;BA.debugLine="txtInput.Text=\"1000\"";
 mostCurrent._txtinput.setText((Object)("1000"));
-RDebugUtils.currentLine=1310722;
- //BA.debugLineNum = 1310722;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
-_astream.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
-RDebugUtils.currentLine=1310723;
- //BA.debugLineNum = 1310723;BA.debugLine="End Sub";
+ //BA.debugLineNum = 72;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
+_v5.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
+ //BA.debugLineNum = 73;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
+_vv4("Me",mostCurrent._txtinput.getText());
+ //BA.debugLineNum = 74;BA.debugLine="End Sub";
 return "";
 }
 public static String  _sw2_click() throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "sw2_click"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "sw2_click", null);
-RDebugUtils.currentLine=1376256;
- //BA.debugLineNum = 1376256;BA.debugLine="Sub SW2_click";
-RDebugUtils.currentLine=1376257;
- //BA.debugLineNum = 1376257;BA.debugLine="txtInput.Text=\"2000\"";
+ //BA.debugLineNum = 76;BA.debugLine="Sub SW2_click";
+ //BA.debugLineNum = 77;BA.debugLine="txtInput.Text=\"2000\"";
 mostCurrent._txtinput.setText((Object)("2000"));
-RDebugUtils.currentLine=1376258;
- //BA.debugLineNum = 1376258;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
-_astream.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
-RDebugUtils.currentLine=1376259;
- //BA.debugLineNum = 1376259;BA.debugLine="End Sub";
+ //BA.debugLineNum = 78;BA.debugLine="AStream.Write(txtInput.Text.GetBytes(\"UTF8\"))";
+_v5.Write(mostCurrent._txtinput.getText().getBytes("UTF8"));
+ //BA.debugLineNum = 79;BA.debugLine="LogMessage(\"Me\", txtInput.Text)";
+_vv4("Me",mostCurrent._txtinput.getText());
+ //BA.debugLineNum = 80;BA.debugLine="End Sub";
 return "";
 }
 public static String  _txtinput_enterpressed() throws Exception{
-RDebugUtils.currentModule="chatactivity";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "txtinput_enterpressed"))
-	return (String) Debug.delegate(mostCurrent.activityBA, "txtinput_enterpressed", null);
-RDebugUtils.currentLine=1245184;
- //BA.debugLineNum = 1245184;BA.debugLine="Sub txtInput_EnterPressed";
-RDebugUtils.currentLine=1245185;
- //BA.debugLineNum = 1245185;BA.debugLine="If btnSend.Enabled = True Then btnSend_Click";
+ //BA.debugLineNum = 66;BA.debugLine="Sub txtInput_EnterPressed";
+ //BA.debugLineNum = 67;BA.debugLine="If btnSend.Enabled = True Then btnSend_Click";
 if (mostCurrent._btnsend.getEnabled()==anywheresoftware.b4a.keywords.Common.True) { 
 _btnsend_click();};
-RDebugUtils.currentLine=1245186;
- //BA.debugLineNum = 1245186;BA.debugLine="End Sub";
+ //BA.debugLineNum = 68;BA.debugLine="End Sub";
 return "";
 }
 }
