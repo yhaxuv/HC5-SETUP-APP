@@ -1,9 +1,0 @@
-This file maps the renamed variables to the original ones.
-v5=astream
-v6=admin
-v7=serial1
-v0=founddevices
-vv1=connecteddevice
-vv2=chatactivity
-vv3=main
-vv4=logmessage
